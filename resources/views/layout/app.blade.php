@@ -25,11 +25,11 @@
 
         <!-- style sheets
         =============================================================================================================-->
-        <!-- bootstrap css file -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+        <!-- app css file with bootstrap and fontawesome -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet" content="text/css" />
 
         <!-- custom css file -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet" content="text/css" />
+        <link href="{{ asset('css/custom.css') }}" rel="stylesheet" content="text/css" />
 
         <!-- section for additional styles on specific sites -->
         @yield('additional_css')
@@ -47,14 +47,14 @@
         </header>
 
         <!-- site content -->
-        <main class="container">
+        <main class="container mt-3">
             @yield('content')
         </main>
 
-        <!-- include bootstrap js -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-        <!-- include custom javascript -->
+        <!-- include app javascript with bootstrap and fontawesome -->
         <script src="{{ asset('js/app.js') }}" content="text/javascript"></script>
+        <!-- include custom javascript -->
+        <script src="{{ asset('js/custom.js') }}" content="text/javascript"></script>
         <!-- section for additional javascript on specific sites -->
         @yield('additional_js')
     </body>
