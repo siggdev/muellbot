@@ -3,10 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\TrashType;
+use App\Repositories\TrashTypeRepository;
 use Illuminate\Http\Request;
 
 class TrashTypeController extends Controller
 {
+    private $trash_type_repo;
+
+    /**
+     * Display a listing of the resource.
+     *
+     */
+    public function __construct() {
+        $this->trash_type_repo = new TrashTypeRepository();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +25,10 @@ class TrashTypeController extends Controller
      */
     public function index()
     {
-        //
+        $trash_types = $this->trash_type_repo->getAllTrashTypesPaginate();
+        return view('trash_type.index')->with([
+            'trash_types' => $trash_types
+        ]);
     }
 
     /**
