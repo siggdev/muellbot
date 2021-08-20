@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\TrashType;
 use Illuminate\Database\Seeder;
 
 class TrashTypeSeeder extends Seeder
@@ -50,5 +51,9 @@ class TrashTypeSeeder extends Seeder
                 'text_color' => '#000000',
             ],
         ];
+
+        foreach($trash_types as $trash_type) {
+            (new TrashType($trash_type))->save();
+        }
     }
 }
