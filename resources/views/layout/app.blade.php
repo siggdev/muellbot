@@ -29,10 +29,18 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
 
         <!-- custom css file -->
-        <link href="{{ asset('/css/app.css') }}" rel="stylesheet" content="text/css" />
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet" content="text/css" />
     </head>
     <body>
-
+        <header>
+            <nav class="navbar navbar-light bg-light">
+                <div class="container">
+                    <a href="/" class="navbar-brand">
+                        <img src="{{ asset('img/logo.svg') }}" alt="logo" width="auto" height="24" class="d-inline-block align-text-top">
+                    </a>
+                </div>
+            </nav>
+        </header>
 
 
         <!-- include bootstrap js -->
