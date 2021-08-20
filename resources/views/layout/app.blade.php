@@ -30,6 +30,9 @@
 
         <!-- custom css file -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" content="text/css" />
+
+        <!-- section for additional styles on specific sites -->
+        @yield('additional_css')
     </head>
     <body>
         <header>
@@ -37,15 +40,22 @@
                 <div class="container">
                     <a href="/" class="navbar-brand">
                         <img src="{{ asset('img/logo.svg') }}" alt="logo" width="auto" height="24" class="d-inline-block align-text-top">
+                        M&uuml;llkalender
                     </a>
                 </div>
             </nav>
         </header>
 
+        <!-- site content -->
+        <main class="container">
+            @yield('content')
+        </main>
 
         <!-- include bootstrap js -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
         <!-- include custom javascript -->
         <script src="{{ asset('js/app.js') }}" content="text/javascript"></script>
+        <!-- section for additional javascript on specific sites -->
+        @yield('additional_js')
     </body>
 </html>
