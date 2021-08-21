@@ -54,6 +54,8 @@
             @yield('content')
         </main>
 
+        <!-- include jquery scripts -->
+        <script src="{{ asset('js/jquery.js') }}" content="text/javascript"></script>
         <!-- include app javascript with bootstrap and fontawesome -->
         <script src="{{ asset('js/app.js') }}" content="text/javascript"></script>
         <!-- include livewire scripts -->
