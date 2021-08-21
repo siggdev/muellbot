@@ -11,12 +11,14 @@
                         <tr>
                             <th>#</th>
                             <th>Art</th>
+                            <th>mit Artikel</th>
                             <th>Farbgestaltung</th>
                         </tr>
                         @foreach($trash_types as $trash_type)
                             <tr>
                                 <td><a href="/trash_types/{{$trash_type->id}}">{{ $trash_type->id }}</a></td>
                                 <td>{{ $trash_type->name }}</td>
+                                <td>{{ $trash_type->with_article }}</td>
                                 <td style="background-color: {{$trash_type->color}}; color: {{ $trash_type->text_color }};">{{ $trash_type->name }}</td>
                             </tr>
                         @endforeach
