@@ -49,7 +49,32 @@ class TrashTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'name' => ['required', 'regex:/[\s\-\w^\d]/', 'min:3', 'max:25'],
+                'description' => ['nullable'],
+                'with_article' => ['required', 'regex:/[\s\-\w^\d]/', 'min:5', 'max:30'],
+                'color' => ['required', 'regex:/^#[0-9a-fA-F]{6}$/'],
+                'text_color' => ['required', 'regex:/^#[0-9a-fA-F]{6}$/'],
+            ],
+            [
+                'name.required' => 'Der Name des Mülltyps muss angegeben werden.',
+                'name.regex' => 'Der Name des Mülltyps darf nur aus Buchstaben, Leerzeichen und Bindestrichen bestehen.',
+                'name.min' => 'Der Name des Mülltyps muss länger als 2 Zeichen sein.',
+                'name.max' => 'Der Name des Mülltyps darf nicht länger als 25 Zeichen sein.',
+                'with_article.required' => 'Der Name des Mülltyps muss angegeben werden.',
+                'with_article.regex' => 'Der Name des Mülltyps darf nur aus Buchstaben, Leerzeichen und Bindestrichen bestehen.',
+                'with_article.min' => 'Der Name des Mülltyps muss länger als 5 Zeichen sein.',
+                'with_article.max' => 'Der Name des Mülltyps darf nicht länger als 30 Zeichen sein.',
+                'color.required' => 'Die Kennfarbe muss angegebenwerden',
+                'color.regex' => 'Die Kennfarbe hat kein gültiges Format',
+                'text_color.required' => 'Die Textfarbe muss angegebenwerden',
+                'text_color.regex' => 'Die Textfarbe hat kein gültiges Format',
+            ]
+        );
+
+
+        return dd($request->all());
     }
 
     /**
