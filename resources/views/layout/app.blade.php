@@ -28,6 +28,9 @@
         <!-- app css file with bootstrap and fontawesome -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" content="text/css" />
 
+        <!-- livewire style sheets -->
+        @livewireStyles
+
         <!-- custom css file -->
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet" content="text/css" />
 
@@ -53,6 +56,8 @@
 
         <!-- include app javascript with bootstrap and fontawesome -->
         <script src="{{ asset('js/app.js') }}" content="text/javascript"></script>
+        <!-- include livewire scripts -->
+        @livewireScripts
         <!-- include custom javascript -->
         <script src="{{ asset('js/custom.js') }}" content="text/javascript"></script>
         <!-- section for additional javascript on specific sites -->
