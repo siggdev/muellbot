@@ -16,7 +16,7 @@ use App\Http\Controllers\TrashTypeController;
 */
 
 Route::get('/', function () {
-    return view('layout.app');
+    return view('layouts.app');
 });
 
 Route::resource('/trash_types', TrashTypeController::class);
