@@ -54,7 +54,7 @@ class TrashTypeController extends Controller
     {
         $request->validate(
             [
-                'name' => ['required', 'regex:/[\s\-\w^\d]/', 'min:3', 'max:25', 'unique:trash_type,name'],
+                'name' => ['required', 'regex:/[\s\-\w^\d]/', 'min:3', 'max:25', 'unique:trash_types,name'],
                 'description' => ['nullable'],
                 'with_article' => ['required', 'regex:/[\s\-\w^\d]/', 'min:5', 'max:30'],
                 'color' => ['required', 'regex:/^#[0-9a-fA-F]{6}$/'],
