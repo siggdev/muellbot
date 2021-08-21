@@ -17,7 +17,7 @@ class CreateTrashTypesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->unique();
             $table->string('with_article');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->char('color', 7);
             $table->char('text_color', 7);
             $table->timestamps();
