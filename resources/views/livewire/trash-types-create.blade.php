@@ -1,5 +1,5 @@
 <div class="card-body">
-    <form action="/trash_type" method="POST" autocomplete="off" enctype="multipart/form-data">
+    <form action="/trash_types" method="POST" autocomplete="off" enctype="multipart/form-data">
         @csrf
         <div class="form-group mb-3">
             <label for="name">Name</label>
@@ -29,7 +29,7 @@
             </div>
             <div class="col-sm-6 mb-3">
                 <label for="preview">Vorschau</label>
-                <input type="text"id="preview" name="preview" style="background-color: {{ $trash_color }}; color: {{ $text_color }}" class="form-control" value="{{ $trash_name }}" disabled />
+                <input type="text" id="preview" name="preview" style="background-color: {{ $trash_color }}; color: {{ $text_color }}" class="form-control" value="{{ $trash_name }}" disabled />
             </div>
         </div>
         <button class="btn btn-sm ms-2 mt-3 mb-3 float-end btn-success" type="submit"><i class="fas fa-plus"></i> Speichern</button>
