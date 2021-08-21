@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Commands\TrashTypeCommand;
 use App\Models\TrashType;
 use App\Repositories\TrashTypeRepository;
 use Illuminate\Http\Request;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 class TrashTypeController extends Controller
 {
     private $trash_type_repo;
+    private $trash_type_com;
 
     /**
      * Display a listing of the resource.
@@ -16,6 +18,7 @@ class TrashTypeController extends Controller
      */
     public function __construct() {
         $this->trash_type_repo = new TrashTypeRepository();
+        $this->trash_type_com = new TrashTypeCommand();
     }
 
     /**
@@ -74,8 +77,9 @@ class TrashTypeController extends Controller
             ]
         );
 
+        $trash_type = $this->trash_type_com->store($request->all());
 
-        return dd($request->all());
+        return redirect('/trash_types')->withSuccess('Der neue Mülltyp ' . $trash_type->name . ' wurde gespeichert');
     }
 
     /**
