@@ -1,6 +1,7 @@
 // remove messages after 10  seconds
-$("document").ready(function (){
-    setTimeout(function (){
-        $("div.alert-disappear").remove()
-    }, 10000);
-})
+$(function(){
+    setTimeout(function(){
+        $(".alert-disappear").fadeOut(1500);
+    }, 10000); // 10 sec
+});
+
