@@ -38,7 +38,7 @@ class TrashTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('trash_type.create');
     }
 
     /**
