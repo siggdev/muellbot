@@ -51,7 +51,7 @@ class TrashTypeController extends Controller
     {
         $request->validate(
             [
-                'name' => ['required', 'regex:/[\s\-\w^\d]/', 'min:3', 'max:25'],
+                'name' => ['required', 'regex:/[\s\-\w^\d]/', 'min:3', 'max:25', 'unique:trash_type,name'],
                 'description' => ['nullable'],
                 'with_article' => ['required', 'regex:/[\s\-\w^\d]/', 'min:5', 'max:30'],
                 'color' => ['required', 'regex:/^#[0-9a-fA-F]{6}$/'],
@@ -62,6 +62,7 @@ class TrashTypeController extends Controller
                 'name.regex' => 'Der Name des Mülltyps darf nur aus Buchstaben, Leerzeichen und Bindestrichen bestehen.',
                 'name.min' => 'Der Name des Mülltyps muss länger als 2 Zeichen sein.',
                 'name.max' => 'Der Name des Mülltyps darf nicht länger als 25 Zeichen sein.',
+                'name.unique' => 'Der Name ist bereits vergeben',
                 'with_article.required' => 'Der Name des Mülltyps muss angegeben werden.',
                 'with_article.regex' => 'Der Name des Mülltyps darf nur aus Buchstaben, Leerzeichen und Bindestrichen bestehen.',
                 'with_article.min' => 'Der Name des Mülltyps muss länger als 5 Zeichen sein.',
