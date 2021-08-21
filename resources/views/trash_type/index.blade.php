@@ -6,6 +6,7 @@
             <div class="card">
                 <div class="card-header">M&uuml;llarten</div>
                 <div class="card-body">
+                    @include('partials.messages')
                     <a class="btn btn-sm btn-success float-end ms-2 mt-3 mb-3" href="/trash_types/create"><i class="fas fa-plus"></i> Neue Müllart anlegen</a>
                     <table class="table table-sm">
                         <tr>
