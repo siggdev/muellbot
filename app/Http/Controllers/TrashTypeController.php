@@ -90,7 +90,9 @@ class TrashTypeController extends Controller
      */
     public function show(TrashType $trashType)
     {
-        //
+        return view('trash_type.show')->with([
+            'trash_type' => $trashType,
+        ]);
     }
 
     /**
